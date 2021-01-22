@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
+.steam{
+	float: left;
+}
+
+.github{
+	float:left;
+}
+
 .content
 {
 	padding: 256px;
@@ -16,6 +24,9 @@ body{
 }
 
 summary{
+	
+	transition-duration: 0;
+	font-size: 24px;
 	width: 200px;
 	transition-duration: 4s;
 	outline: 0;
@@ -27,6 +38,7 @@ ul{
 }
 
 li{
+	padding-left: 40px;
 	display: inline-block;
 	width: 75px;
 }
