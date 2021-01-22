@@ -1,0 +1,13 @@
+body{
+	background: #121212;
+	color:white;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+a{
+	color:white;
+	text-decoration: none;
+	border-bottom-style: none;
+}
