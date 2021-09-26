@@ -27,11 +27,14 @@ body{
 
 summary{
 	
-	transition-duration: 0;
 	font-size: 24px;
 	width: 200px;
-	transition-duration: 4s;
+	transition-duration: 0.2s;
 	outline: 0;
+}
+
+summary::selection {
+	transition-duration: 0.5s;
 }
 
 ul{
