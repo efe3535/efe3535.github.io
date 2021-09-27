@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.add-me {
+    background-color: indigo;
+    border: none;
+    color: white;
+    width: 200px;
+    height: 66px; 
+    font-size: 24px;
+    transition-duration: 0.5s;
+}
+
+body {
+    cursor: crosshair;
+    transition-duration: 0.4s;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #090909; 
+    color:#FFF; 
+    background-image: url('https://efe3535.github.io/discord.png');
+}
+
+.add-me:hover {
+    background-color: brown;
+    cursor: pointer;
+}
+
+.back {
+    text-decoration: none;
+    color: #006eff;
+}
+
+.enginar-bot {
+    color: green;
+}
+
+.enginar-bot2 {
+    color: yellow;
+}
+
+.enginar-bot3 {
+    color: turquoise;
+}
