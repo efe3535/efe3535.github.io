@@ -12,7 +12,18 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        "background": "#121212",
+        "secondary": "#242424",
+        "tertiary": "#363636",
+        "foreground": "#ebdbb2"
+      },
+      fontFamily: {
+        "display": ["Roboto Mono"]
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require("@designbycode/tailwindcss-text-stroke"),
+  ],
 };
