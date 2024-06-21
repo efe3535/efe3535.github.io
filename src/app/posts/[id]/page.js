@@ -1,5 +1,4 @@
 import { getPostData } from "@/app/lib/posts";
-import WrongRoute from "../page";
 import parse from 'html-react-parser';
 import Link from "next/link";
 
