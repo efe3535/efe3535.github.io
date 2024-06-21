@@ -1,5 +1,7 @@
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -11,7 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={robotoMono.className}>{children}</body>
+      <Suspense fallback={<Loading />}>
+        <body className={robotoMono.className}>{children}</body>
+      </Suspense>
     </html>
   );
 }

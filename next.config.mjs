@@ -4,10 +4,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        /* https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg */
-        hostname: "letsenhance.io",
+        // https://emojiisland.com/cdn/shop/products/Waving_Hand_Sign_Emoji_Icon_ios10_grande.png
+        hostname: "emojiisland.com",
         port: '',
-        pathname: "/posts/**"
+        pathname: "/**"
       }
     ]
   }
