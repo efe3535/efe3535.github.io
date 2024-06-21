@@ -18,14 +18,17 @@ Kütüphaneleri dahil ederek başlayalım.
 #include <libopencm3/cm3/nvic.h>
 #include <libopencm3/cm3/systick.h>
 ```
-`rcc.h` RCC fonksiyonları için.
+` `  
+` `  
+| Header    |   İşlev  |
+| :-----   | :-:|
+| rcc.h     |  RCC fonksiyonları için.  |
+| gpio.h    | LED'in kontrolü için. |
+| nvic.h    |  SysTick kesmesinin prototipi için. |
+| systick.h |   SysTick fonksiyonları için.   |
 
-`gpio.h` LED'in kontrolü için.
-
-`nvic.h` SysTick kesmesinin prototipi için.
-
-`systick.h` SysTick fonksiyonları için.
-
+` `  
+` `  
 Önce mikrodenetleyicimi STM32F446RE için maksimum saat hızı olan 180MHz'e alıyorum.
 ```c
 rcc_clock_setup_pll(&rcc_hse_8mhz_3v3[RCC_CLOCK_3V3_180MHZ]);

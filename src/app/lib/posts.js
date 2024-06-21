@@ -15,6 +15,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkPrism from 'remark-prism';
 import rehypeFormat from 'rehype-format';
+import remarkGfm from 'remark-gfm';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 export function getSortedPostsData() {
@@ -61,6 +62,7 @@ export async function getPostData(id) {
     matterResult = matter(fileContents);
     processedContent = await unified()
       .use(remarkParse) // Parse markdown content to a syntax tree
+      .use(remarkGfm)
       .use(remarkRehype) // Turn markdown syntax tree to HTML syntax tree, ignoring embedded HTML
       .use(rehypePrism)
       .use(rehypeStringify) // Serialize HTML syntax tree
