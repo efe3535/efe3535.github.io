@@ -7,6 +7,14 @@ import { redirect } from 'next/navigation'
 
 import { remark } from 'remark';
 import html from 'remark-html';
+import rehypePrism from "@mapbox/rehype-prism";
+import rehypeStringify from "rehype-stringify";
+import remarkRehype from "remark-rehype";
+import rehypeParse from 'rehype-parse';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkPrism from 'remark-prism';
+import rehypeFormat from 'rehype-format';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 export function getSortedPostsData() {
@@ -36,19 +44,6 @@ export function getSortedPostsData() {
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -64,8 +59,11 @@ export async function getPostData(id) {
   if (fs.existsSync(fullPath, 'utf8')) {
     fileContents = fs.readFileSync(fullPath, 'utf8');
     matterResult = matter(fileContents);
-    processedContent = await remark()
-      .use(html)
+    processedContent = await unified()
+      .use(remarkParse) // Parse markdown content to a syntax tree
+      .use(remarkRehype) // Turn markdown syntax tree to HTML syntax tree, ignoring embedded HTML
+      .use(rehypePrism)
+      .use(rehypeStringify) // Serialize HTML syntax tree
       .process(matterResult.content);
     contentHtml = processedContent.toString();
   } else {
