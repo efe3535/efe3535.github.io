@@ -40,7 +40,7 @@ rcc_periph_clock_enable(RCC_SYSCFG);
 
 Ardından, GPIO pinini aktifleştirmek için `gpio_mode_setup` fonksiyonunu kullanacağız.
 ```c
-gpio_mode_setup(GPIOA, GPIO_PUPD_NONE, GPIO_MODE_OUTPUT, GPIO5);
+gpio_mode_setup(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO5);
 ```
 
 SysTick'i aktifleştirmek için 180000'de reload yapmasını seçiyorum. Bu şu anlama geliyor. İşlemcim `180000000`Hz saat hızında, bunu 180000'e böldüğümde 1000 sonucunu elde ediyorum. Yani `sys_tick_handler` kesmesi her milisaniye tetikleniyor. Buradan da bir değişkeni arttırarak sistemin başlangıcından itibaren geçen milisaniyeleri sayabilirim.
@@ -97,7 +97,7 @@ int main(void)
   rcc_periph_clock_enable(RCC_GPIOA);
   rcc_periph_clock_enable(RCC_SYSCFG);
   
-  gpio_mode_setup(GPIOA, GPIO_PUPD_NONE, GPIO_MODE_OUTPUT, GPIO5);
+  gpio_mode_setup(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO5);
 
   systick_set_reload(180000);
   systick_set_clocksource(STK_CSR_CLKSOURCE_AHB);
