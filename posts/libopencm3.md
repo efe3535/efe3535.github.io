@@ -94,8 +94,7 @@ void sys_tick_handler(void) {
 	millis++;
 }
 
-int main(void)
-{
+int main(void) {
   rcc_clock_setup_pll(&rcc_hse_8mhz_3v3[RCC_CLOCK_3V3_180MHZ]);
   rcc_periph_clock_enable(RCC_GPIOA);
   rcc_periph_clock_enable(RCC_SYSCFG);
@@ -109,8 +108,8 @@ int main(void)
 
 	while (1) {
 		if((millis%1000)==0) {
-      gpio_toggle(GPIOA, GPIO5);
-    }
+      			gpio_toggle(GPIOA, GPIO5);
+    		}
 	}
 
 	return 0;
