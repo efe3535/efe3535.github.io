@@ -11,7 +11,6 @@ const BlogPage = async ({ params }) => {
       <Link className="text-sm self-start text-foreground underline" href={"/"}>Ana sayfaya geri dön</Link>
       <p className="text-xl text-foreground self-start mt-10">{post.title} — {post.date}</p>
       {parse(post.contentHtml)}
-      <Link className="text-xl self-start text-foreground underline mt-24" href={"/"}>Ana sayfaya geri dön</Link>
     </main >
   );
 }

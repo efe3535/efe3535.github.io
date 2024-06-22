@@ -16,11 +16,12 @@ module.exports = {
         "background": "#121212",
         "secondary": "#242424",
         "tertiary": "#363636",
-        "foreground": "#ebdbb2"
+        "foreground": "#ebdbb2",
+        "foreground2": "#8ec07caa"
       },
       fontFamily: {
         "display": ["Roboto Mono"]
-      }
+      },
     },
   },
   plugins: [
