@@ -108,8 +108,8 @@ int main(void) {
 
 	while (1) {
 		if((millis%1000)==0) {
-      			gpio_toggle(GPIOA, GPIO5);
-    		}
+			gpio_toggle(GPIOA, GPIO5);
+		}
 	}
 
 	return 0;
